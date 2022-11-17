@@ -22,7 +22,7 @@ const row = (bill) => {
 const rows = (data) => {
 
   // [1 - Bug report] - Le test Bills.js est au rouge/FAIL (src/__tests__/Bills.js) / les notes de frais ne s'affichent pas par ordre décroissant.
-  // Ajout de la méthode sort() pour trier les datas de manière décroissante en fonction de leurs dates OK (test PASS)
+  // Ajout de la méthode sort() pour trier les datas de manière décroissante en fonction de leurs dates (__test__/Bills.js) -  OK (test PASS)
 
   // return (data && data.length) ? data
   // .map(bill => row(bill))

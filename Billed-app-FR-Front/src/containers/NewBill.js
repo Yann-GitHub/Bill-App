@@ -18,6 +18,18 @@ export default class NewBill {
   handleChangeFile = e => {
     e.preventDefault()
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
+
+    // [3 - Bug hunt] - Si j'upload une note de frais avec un justificatif qui a une extension différente de jpg, jpeg ou png, je ne peux pas consulter la note de frais
+    // Ajout d'une RegEx pour définir les extensions valides (jpg - jpeg - png)
+    // Utilisation de la méthode test() pour vérifier si une partie de la chaine de caractère correspond à la regex
+    // Si ce n'est pas le cas, on affiche une alert et on empêche l'upload en réinitialisant le champs correspondant au fichier
+    const regexExtensionFile = new RegExp(`(jpg|jpeg|png)`, "i");
+    if (!regexExtensionFile.test(file.name)) {
+      console.log(file.name)
+      alert("File extension not supported")
+      e.target.value = "";
+    }
+
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
     const formData = new FormData()

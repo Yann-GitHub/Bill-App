@@ -94,7 +94,7 @@ describe("Given I am connected as an employee", () => {
   });
 
   describe("When I am on Bills Page and I click on the new bill button", () => {
-    test("Then I should be send on the new bill form", () => {
+    test("Then I should be send on the new bill page form", () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname });
       };
@@ -141,16 +141,6 @@ describe("Given I am a user connected as Employee", () => {
 
       const allBillsUI = screen.getAllByTestId("bill-list-item");
       expect(allBillsUI.length).toEqual(4);
-
-      // -----------------
-      // const storeMethodeSpy = jest.spyOn(mockStore, "bills");
-      // const billsList = await mockStore.bills().list();
-      // document.body.innerHTML = BillsUI({ data: billsList });
-      // const allBillsUI = screen.getAllByTestId("bill-list-item");
-
-      // expect(storeMethodeSpy).toHaveBeenCalled();
-      // expect(allBillsUI.length).toEqual(4);
-      // -----------------
     });
   });
   describe("When I navigate to Bills Page and an error occurs on API", () => {
@@ -173,8 +163,8 @@ describe("Given I am a user connected as Employee", () => {
 
       window.onNavigate(ROUTES_PATH.Bills);
       await new Promise(process.nextTick);
-      const message = await screen.getByText(/Erreur 404/);
-      expect(message).toBeTruthy();
+      const errorMessage = await screen.getByText(/Erreur 404/);
+      expect(errorMessage).toBeTruthy();
     });
 
     test("fetches messages from an API and fails with 500 message error", async () => {
@@ -188,8 +178,8 @@ describe("Given I am a user connected as Employee", () => {
 
       window.onNavigate(ROUTES_PATH.Bills);
       await new Promise(process.nextTick);
-      const message = await screen.getByText(/Erreur 500/);
-      expect(message).toBeTruthy();
+      const errorMessage = await screen.getByText(/Erreur 500/);
+      expect(errorMessage).toBeTruthy();
     });
   });
 });

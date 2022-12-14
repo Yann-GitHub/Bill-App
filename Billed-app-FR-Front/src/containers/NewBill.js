@@ -31,6 +31,7 @@ export default class NewBill {
       console.log(file.name);
       alert("File extension not supported");
       e.target.value = "";
+      return;
     } else {
       const filePath = e.target.value.split(/\\/g);
       const fileName = filePath[filePath.length - 1];

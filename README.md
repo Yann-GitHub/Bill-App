@@ -28,15 +28,13 @@ Fiabiliser et améliorer le parcours employé en s'appuyant sur le document de [
 ## Livrables
 
 - Le Code Base à jour pour répondre aux besoins et diponible sur un [repo GitHub public](https://github.com/Yann-GitHub/Bill-App/tree/main/Billed-app-FR-Front).
-- Un [screenshot](./Docs/) au format PNG du rapport de tests Jest sur l’ensemble des fichiers d’UI (src/views).
-- Un [screenshot](./Docs/) au format PNG du rapport de tests Jest sur l’ensemble des fichiers d’UX (src/containers).
-- Un [screenshot](./Docs/) au format PNG du rapport de couverture Jest.
-- Un [document au format PDF](./Docs/) du plan de tests End-To-End pour le parcours employé.
+- Un [screenshot](./Docs/rapport_test.png) au format PNG du rapport de tests Jest sur l’ensemble des fichiers d’UI (src/views) et d’UX (src/containers).
+- Un [screenshot](./Docs/rapport_couverture.png) au format PNG du rapport de couverture Jest.
+- Un [document au format PDF](./Docs/plan_test_end2end.pdf) du plan de tests End-To-End pour le parcours employé.
 
 ## Compétences évaluées
 
 - Jest (Javascript Testing Framework) et @testing-library.
 - Rédiger des tests unitaires et d'intégrations pour permettre d'éliminer les bugs et éviter toutes régressions lors des prochaines évolutions.
 - Rédiger un plan de test End-to-End manuel.
-- Débugger une application web avec le Chrome Debugger.
-- Utilisation des Chrome DevTools.
+- Débugger une application web avec Chrome Debugger.
